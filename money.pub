@@ -1,0 +1,7 @@
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJn05i91Awmu4Q6mZwdlMZvVXH3FleXBT9hpEyrFxSmK n.nate1544@gmail.com 
+
+
+
+
+exit
+ssh-keygen -t ed25519 -C n.nate1544@gmail.com
