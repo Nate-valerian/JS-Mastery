@@ -172,10 +172,61 @@ Here's how you can modify the previous example to achieve this behavior:
   </ul>
 </body>
 
+
 Explanation
+
 getElementsByClassName(): This method is used to select all elements with a specific class name.
 classList.remove(): Removes a class from an element.
 classList.add(): Adds a class to an element.
 onclick Event: Triggers the menuClicked function when a menu item is clicked. While the above code works, there are ways to optimize it. Consider using event delegation or modern JavaScript features like forEach to improve performance and readability.
 
 
+Creating Nodes
+JavaScript provides several ways to create HTML elements dynamically. The most commonly used method is document.createElement.
+
+document.createElement("tagname"); // tagname can be any valid HTML tag
+const newElement = document.createElement("div");
+newElement.textContent = "Hello, World!";
+document.body.appendChild(newElement);
+
+
+
+Traversing the DOM
+Sometimes, you may not know the exact element you want to manipulate, but you know its relationship to other elements. JavaScript provides methods to traverse the DOM tree.
+
+Example:
+
+<ul class="subjects">
+  <li>Maths</li>
+  <li class="fav-subject">Science</li>
+  <li>English</li>
+</ul>
+
+<script>
+  const subjects = document.querySelector(".subjects");
+
+  console.log(subjects.firstElementChild); // First element of the list
+  console.log(subjects.lastElementChild); // Last element of the list
+
+  const favSub = document.querySelector(".fav-subject");
+
+  console.log(favSub.previousElementSibling); // Element before favorite subject
+  console.log(favSub.nextElementSibling); // Element after favorite subject
+  console.log(favSub.parentElement); // Parent of favorite subject (entire list)
+</script>
+
+Node Traversal Methods:
+
+ele.childNodes
+ele.firstChild
+ele.lastChild
+ele.previousSibling
+ele.nextSibling
+ele.parentNode
+
+Removing Nodes
+Removing elements from the DOM is another common task. For example,
+you might want to remove a login link once a user has logged in.
+
+const favSub = document.querySelector(".fav-subject");
+favSub.remove(); // Removes element from DOM
